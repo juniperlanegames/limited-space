@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjesbrskhia"]
+
+[ext_resource type="Script" path="res://cargo_space.gd" id="1_mmhu7"]
+[ext_resource type="Texture2D" uid="uid://dgw75vqfnfhqr" path="res://Sprites/Background.png" id="2_wqrdx"]
+
+[node name="CargoSpace" type="Node2D"]
+script = ExtResource("1_mmhu7")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_wqrdx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlapping" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
