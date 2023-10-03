@@ -16,10 +16,9 @@ offset_right = 202.0
 offset_bottom = 100.0
 size_flags_horizontal = 0
 
-[node name="CL MainMenu" parent="Control MainMenu" index="0"]
-visible = true
-
 [node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
+offset_top = 0.0
+offset_bottom = 0.0
 texture = ExtResource("2_w613f")
 
 [node name="BG" parent="Control MainMenu/CL Planet Selection" index="0"]
