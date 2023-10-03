@@ -1,14 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx7wn1ll33tm0"]
+[gd_scene load_steps=7 format=3 uid="uid://bx7wn1ll33tm0"]
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
+[ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
+[ext_resource type="Texture2D" uid="uid://dlfgg36wky2t0" path="res://Sprites/Space LLC Simple star background.png" id="2_w613f"]
+[ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
+[ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
+[ext_resource type="AudioStream" uid="uid://dp5cq546x0i85" path="res://Audio/SpaceEscape_Music_SolarSplash.wav" id="5_p2p5q"]
 
 [node name="Root" type="Node2D"]
 
-[node name="CargoSpace" parent="." instance=ExtResource("1_ufjee")]
+[node name="Control MainMenu" parent="." instance=ExtResource("2_a1lhn")]
+offset_left = 202.0
+offset_top = 100.0
+offset_right = 202.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+
+[node name="CL MainMenu" parent="Control MainMenu" index="0"]
+visible = true
+
+[node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
+texture = ExtResource("2_w613f")
+
+[node name="BG" parent="Control MainMenu/CL Planet Selection" index="0"]
+texture = ExtResource("2_w613f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(200, 100)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CargoSpace" parent="." instance=ExtResource("1_ufjee")]
+
+[node name="Control" parent="CargoSpace/CanvasLayer" index="0"]
+mouse_filter = 2
+
+[node name="Scripts" type="Node" parent="."]
+
+[node name="PlanetsSelectionManager" type="Node" parent="Scripts"]
+script = ExtResource("3_qk8n7")
+
+[node name="GameManager" type="Node" parent="Scripts"]
+script = ExtResource("4_qt626")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_p2p5q")
+autoplay = true
+
+[editable path="Control MainMenu"]
+[editable path="CargoSpace"]
