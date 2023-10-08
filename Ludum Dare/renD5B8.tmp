@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgplp3bf1ueq5"]
+
+[ext_resource type="Texture2D" uid="uid://dcrvo7dn8wglr" path="res://icon.svg" id="1_or3on"]
+[ext_resource type="Script" path="res://tween_test_script.gd" id="2_c0cqk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Godot" type="Sprite2D" parent="."]
+position = Vector2(159, 121)
+texture = ExtResource("1_or3on")
+
+[node name="Scripts" type="Node" parent="."]
+
+[node name="Test Script" type="Node" parent="Scripts" node_paths=PackedStringArray("godot_sprite")]
+editor_description = "Main script for the test scene."
+script = ExtResource("2_c0cqk")
+godot_sprite = NodePath("../../Godot")
+
+[node name="Node" type="Node" parent="Scripts"]

@@ -19,7 +19,7 @@ func _on_button_pressed() -> void: # play button
 	
 	var timer = Timer.new()
 	timer.connect("timeout", _on_timer_timeout)
-	timer.wait_time = 7
+	timer.wait_time = 20
 	add_child(timer)
 	timer.start()
 	
