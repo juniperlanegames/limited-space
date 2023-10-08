@@ -14,11 +14,10 @@
 script = ExtResource("1_xvpue")
 sprites = [ExtResource("2_c3l4b"), ExtResource("3_r7lto"), ExtResource("4_lpcbf"), ExtResource("5_hbp7u"), ExtResource("6_shkx5"), ExtResource("7_sj0mh")]
 
-[node name="PlanetSprite" type="Sprite2D" parent="." node_paths=PackedStringArray("sprite")]
+[node name="PlanetSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_qjtm6")
 script = ExtResource("9_h17td")
-sprite = NodePath(".")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
