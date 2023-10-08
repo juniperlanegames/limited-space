@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Ludum Dare"
+config/name="Space Escape"
 run/main_scene="res://root.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Planets/Space LLC PLANET 03.png"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
 
 [input]
 
