@@ -1,7 +1,9 @@
 extends Node
 
-var rng = RandomNumberGenerator.new()
 @export var all_planets_list: Array
+@export var spaceship: Sprite2D
+
+var rng = RandomNumberGenerator.new()
 var planets: Array
 var planet_amount_in_grid: int = 6
 var planet_types_amount: int = 3
@@ -10,18 +12,37 @@ var planet_grid_columns: int = 6
 var planet_distance_px: int = 150
 var grid_y_offset_px: int = -100
 
-#@export var planet: Node
-
+var ship_position
 
 func _ready() -> void:
 	planets = create_2d_array(planet_grid_columns, planet_grid_rows, 0)
 		
 	while get_planet_amount() < 6:
 		_add_planet()
-	
-#	print(planets)
 
+
+func _spawn_and_move_spaceship_to_random_location():
+	# find free slot to spaceship
+	var spawned_ship = false
+	var pos
+	var world_pos
+	while !spawned_ship:
+		pos = _getRandPosition()
+		if _isFree(pos):
+			spawned_ship = true
+			ship_position = pos
+			world_pos = _get_grid_pos(pos.x, pos.y)
+			spaceship.visible = true
 	
+	# move spaceship
+	spaceship.position = Vector2(-1000, 0)
+	spaceship.rotate((spaceship.position.angle_to_point(world_pos)) + deg_to_rad(90))
+	var tw = create_tween()
+	tw.tween_property(spaceship, "position", world_pos,  5)
+
+func _get_grid_pos(x, y):
+	return Vector2(grid_y_offset_px + x * planet_distance_px, grid_y_offset_px + y * planet_distance_px)
+
 func _add_planet():
 	var x_column = 0
 	var y_row = 0
@@ -34,6 +55,18 @@ func _add_planet():
 	planets[y_row][x_column] = planet
 	pass
 	
+
+func _getRandPosition():
+	var x_column = 0
+	var y_row = 0
+	x_column = rng.randi_range(0, planet_grid_columns - 1)
+	y_row = rng.randi_range(0, planet_grid_rows - 1)
+	return Vector2(x_column, y_row)
+
+
+func _isFree(cell: Vector2):
+	return planets[cell.y][cell.x] == 0
+
 
 func get_planet_amount():
 	var counter = 0
@@ -54,6 +87,7 @@ func spawn_planets():
 			if planets[y][x] > 0:
 				spawn_single_planet(grid_y_offset_px + x * planet_distance_px,grid_y_offset_px + y * planet_distance_px)
 				
+	_spawn_and_move_spaceship_to_random_location()
 
 func spawn_single_planet(x, y):
 	var planet = preload("res://planet_selection.tscn")

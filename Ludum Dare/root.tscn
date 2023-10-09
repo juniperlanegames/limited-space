@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
 [ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
-[ext_resource type="Texture2D" uid="uid://dlfgg36wky2t0" path="res://Sprites/Space LLC Simple star background.png" id="2_w613f"]
 [ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
+[ext_resource type="Texture2D" uid="uid://dcrvo7dn8wglr" path="res://icon.svg" id="4_4dxtd"]
 [ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
 [ext_resource type="AudioStream" uid="uid://dp5cq546x0i85" path="res://Audio/SpaceEscape_Music_SolarSplash.wav" id="5_p2p5q"]
 
@@ -19,10 +19,6 @@ size_flags_horizontal = 0
 [node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
 offset_top = 0.0
 offset_bottom = 0.0
-texture = ExtResource("2_w613f")
-
-[node name="BG" parent="Control MainMenu/CL Planet Selection" index="0"]
-texture = ExtResource("2_w613f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(200, 100)
@@ -34,8 +30,14 @@ mouse_filter = 2
 
 [node name="Scripts" type="Node" parent="."]
 
-[node name="PlanetsSelectionManager" type="Node" parent="Scripts"]
+[node name="PlanetsSelectionManager" type="Node" parent="Scripts" node_paths=PackedStringArray("spaceship")]
 script = ExtResource("3_qk8n7")
+spaceship = NodePath("Spaceship")
+
+[node name="Spaceship" type="Sprite2D" parent="Scripts/PlanetsSelectionManager"]
+z_index = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4dxtd")
 
 [node name="GameManager" type="Node" parent="Scripts"]
 script = ExtResource("4_qt626")
