@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://3ya8rkyrg8xa"]
+[gd_scene load_steps=14 format=3 uid="uid://3ya8rkyrg8xa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_trwe4"]
-[ext_resource type="Texture2D" uid="uid://0tqo6ln3jtl5" path="res://placeholder_bg1_royaltyfree.jpeg" id="2_chf77"]
 [ext_resource type="Texture2D" uid="uid://dlfgg36wky2t0" path="res://Sprites/Space LLC Simple star background.png" id="3_17n1q"]
 [ext_resource type="Texture2D" uid="uid://de60mfab3n84u" path="res://Sprites/Pieces/crred.png" id="3_nea87"]
 [ext_resource type="Texture2D" uid="uid://ba3mf435nadb4" path="res://Sprites/space LLC interior background.png" id="3_vp8w6"]
@@ -38,7 +37,7 @@ offset_top = -60.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_chf77")
+texture = ExtResource("3_17n1q")
 expand_mode = 5
 
 [node name="GameName Space LLC" type="Label" parent="CL MainMenu"]
@@ -111,15 +110,172 @@ expand_mode = 5
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -268.0
+offset_left = -960.0
 offset_top = -120.0
-offset_right = 232.0
+offset_right = 960.0
 offset_bottom = 80.0
 grow_horizontal = 2
-scale = Vector2(1.6, 1.04)
-pivot_offset = Vector2(250, 0)
 size_flags_horizontal = 4
 texture = SubResource("PlaceholderTexture2D_u2fxi")
+
+[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/Top BG"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -291.5
+offset_top = -66.0
+offset_right = 291.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 200
+
+[node name="VLG Left" type="VBoxContainer" parent="CL Planet Selection/Top BG/BoxContainer"]
+layout_mode = 2
+
+[node name="Planet" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left"]
+layout_mode = 2
+
+[node name="Planet Name" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Planet"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Planet: "
+
+[node name="script planet name" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Planet"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Nebuloria"
+
+[node name="Needs" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left"]
+layout_mode = 2
+
+[node name="Needs" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Needs: "
+
+[node name="script Values" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Rock 1, Rock 2"
+
+[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_nea87")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("4_02yjy")
+expand_mode = 1
+
+[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+modulate = Color(1, 1, 1, 0.392157)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_604wg")
+expand_mode = 1
+
+[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+modulate = Color(1, 1, 1, 0.392157)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("6_j2u4g")
+expand_mode = 1
+
+[node name="material" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+modulate = Color(1, 1, 1, 0.392157)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("7_dv1ke")
+expand_mode = 1
+
+[node name="VLG Right" type="VBoxContainer" parent="CL Planet Selection/Top BG/BoxContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Fuel cost: "
+
+[node name="script planet fuel cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "650"
+
+[node name="slash" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = " of "
+
+[node name="script total_fuel" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "2000"
+
+[node name="BoxContainer2" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 20
+text = "Rich in:"
+
+[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+modulate = Color(1, 1, 1, 0.392157)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("3_nea87")
+expand_mode = 1
+
+[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+modulate = Color(1, 1, 1, 0.392157)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("4_02yjy")
+expand_mode = 1
+
+[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_604wg")
+expand_mode = 1
+
+[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("6_j2u4g")
+expand_mode = 1
+
+[node name="material" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("7_dv1ke")
+expand_mode = 1
 
 [node name="Bottom BG" type="TextureRect" parent="CL Planet Selection"]
 anchors_preset = 7
@@ -127,185 +283,47 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
+offset_left = -960.0
+offset_top = -60.0
+offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(100, 0)
-size_flags_horizontal = 4
 texture = SubResource("PlaceholderTexture2D_u2fxi")
+expand_mode = 1
+stretch_mode = 1
 
-[node name="Button" type="Button" parent="CL Planet Selection/Bottom BG"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CL Planet Selection/Bottom BG"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.5
-offset_top = -15.5
-offset_right = 18.5
-offset_bottom = 15.5
+offset_left = -225.0
+offset_top = -20.0
+offset_right = 273.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Travel"
+theme_override_constants/separation = 100
 
-[node name="VLG Left" type="VBoxContainer" parent="CL Planet Selection"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -334.0
-offset_right = 166.0
-offset_bottom = 120.0
-grow_horizontal = 2
-scale = Vector2(0.7, 0.7)
-
-[node name="Planet" type="BoxContainer" parent="CL Planet Selection/VLG Left"]
+[node name="Time remaining" type="Label" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " Time remaining: 30d"
 
-[node name="Planet Name" type="Label" parent="CL Planet Selection/VLG Left/Planet"]
+[node name="Cargo" type="Button" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "Planet: "
+text = "Show Cargo"
 
-[node name="script planet name" type="Label" parent="CL Planet Selection/VLG Left/Planet"]
+[node name="Travel" type="Button" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "ABC-123"
+text = "Travel to Planet"
 
-[node name="Needs" type="BoxContainer" parent="CL Planet Selection/VLG Left"]
+[node name="Money" type="Label" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
 layout_mode = 2
-
-[node name="Needs" type="Label" parent="CL Planet Selection/VLG Left/Needs"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "Needs: "
-
-[node name="script Values" type="Label" parent="CL Planet Selection/VLG Left/Needs"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "Rock 1, Rock 2"
-
-[node name="material3" type="TextureRect" parent="CL Planet Selection/VLG Left/Needs"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("3_nea87")
-expand_mode = 1
-
-[node name="material2" type="TextureRect" parent="CL Planet Selection/VLG Left/Needs"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("4_02yjy")
-expand_mode = 1
-
-[node name="material4" type="TextureRect" parent="CL Planet Selection/VLG Left/Needs"]
-modulate = Color(1, 1, 1, 0.392157)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("5_604wg")
-expand_mode = 1
-
-[node name="material5" type="TextureRect" parent="CL Planet Selection/VLG Left/Needs"]
-modulate = Color(1, 1, 1, 0.392157)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("6_j2u4g")
-expand_mode = 1
-
-[node name="material" type="TextureRect" parent="CL Planet Selection/VLG Left/Needs"]
-modulate = Color(1, 1, 1, 0.392157)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("7_dv1ke")
-expand_mode = 1
-
-[node name="VLG Right" type="VBoxContainer" parent="CL Planet Selection"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 11.0001
-offset_right = 511.0
-offset_bottom = 120.0
-grow_horizontal = 2
-scale = Vector2(0.7, 0.7)
-
-[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/VLG Right"]
-layout_mode = 2
-
-[node name="Fuel Cost" type="Label" parent="CL Planet Selection/VLG Right/BoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "Fuel cost: "
-
-[node name="script planet fuel cost" type="Label" parent="CL Planet Selection/VLG Right/BoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "650"
-
-[node name="slash" type="Label" parent="CL Planet Selection/VLG Right/BoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = " of "
-
-[node name="script total_fuel" type="Label" parent="CL Planet Selection/VLG Right/BoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "2000"
-
-[node name="BoxContainer2" type="BoxContainer" parent="CL Planet Selection/VLG Right"]
-layout_mode = 2
-
-[node name="Fuel Cost" type="Label" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 40
-text = "Rich in:"
-
-[node name="material3" type="TextureRect" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-modulate = Color(1, 1, 1, 0.392157)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("3_nea87")
-expand_mode = 1
-
-[node name="material2" type="TextureRect" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-modulate = Color(1, 1, 1, 0.392157)
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("4_02yjy")
-expand_mode = 1
-
-[node name="material4" type="TextureRect" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("5_604wg")
-expand_mode = 1
-
-[node name="material5" type="TextureRect" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("6_j2u4g")
-expand_mode = 1
-
-[node name="material" type="TextureRect" parent="CL Planet Selection/VLG Right/BoxContainer2"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("7_dv1ke")
-expand_mode = 1
+theme_override_font_sizes/font_size = 20
+text = "Money: 1000"
 
 [node name="CL Planet Gameplay" type="CanvasLayer" parent="."]
 layer = -1
