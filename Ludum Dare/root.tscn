@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx7wn1ll33tm0"]
+[gd_scene load_steps=8 format=3 uid="uid://bx7wn1ll33tm0"]
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
 [ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
+[ext_resource type="Texture2D" uid="uid://g88vw42wdiil" path="res://Sprites/Starscapes/starscape_01.png" id="2_apesr"]
 [ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
 [ext_resource type="Texture2D" uid="uid://dcrvo7dn8wglr" path="res://icon.svg" id="4_4dxtd"]
 [ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
@@ -19,6 +20,9 @@ size_flags_horizontal = 0
 [node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
 offset_top = 0.0
 offset_bottom = 0.0
+
+[node name="Star BG" parent="Control MainMenu/CL Planet Selection" index="0"]
+texture = ExtResource("2_apesr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(200, 100)
