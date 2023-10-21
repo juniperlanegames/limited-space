@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlfgg36wky2t0"
-path="res://.godot/imported/Space LLC Simple star background.png-34e8fe2a5e89257d90ac8d8b31d2d9ac.ctex"
+uid="uid://djqtlnvla3jcs"
+path="res://.godot/imported/galaxy_console_bottom.png-ecfe08d42ba0b60600a66dd7ca2c8a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Space LLC Simple star background.png"
-dest_files=["res://.godot/imported/Space LLC Simple star background.png-34e8fe2a5e89257d90ac8d8b31d2d9ac.ctex"]
+source_file="res://Sprites/ShipConsole/galaxy_console_bottom.png"
+dest_files=["res://.godot/imported/galaxy_console_bottom.png-ecfe08d42ba0b60600a66dd7ca2c8a2a.ctex"]
 
 [params]
 
