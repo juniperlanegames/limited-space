@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bx7wn1ll33tm0"]
+[gd_scene load_steps=16 format=3 uid="uid://bx7wn1ll33tm0"]
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
 [ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://do87b4ir11hqr" path="res://Sprites/Starscapes/starscape_02.png" id="2_tf5yb"]
 [ext_resource type="Texture2D" uid="uid://d3n2ty2ewca44" path="res://Sprites/ShipConsole/galaxy_console_top.png" id="3_om8jg"]
 [ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
+[ext_resource type="Texture2D" uid="uid://5h1061n80tqb" path="res://Sprites/OtherAssets/play_button.png" id="3_y7uw1"]
+[ext_resource type="Texture2D" uid="uid://d25g4ohh34rxi" path="res://Sprites/OtherAssets/menu_title.png" id="4_0qjef"]
 [ext_resource type="Texture2D" uid="uid://dcrvo7dn8wglr" path="res://icon.svg" id="4_4dxtd"]
 [ext_resource type="Texture2D" uid="uid://dcm80h3dytb5k" path="res://Sprites/ShipConsole/galaxy_led_large.png" id="4_21k1o"]
 [ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
@@ -23,10 +25,36 @@ offset_right = 202.0
 offset_bottom = 100.0
 size_flags_horizontal = 0
 
+[node name="CL MainMenu" parent="Control MainMenu" index="0"]
+visible = true
+
 [node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
 offset_top = 0.0
 offset_bottom = 0.0
 texture = ExtResource("2_tf5yb")
+
+[node name="GameName Space LLC" parent="Control MainMenu/CL MainMenu" index="1"]
+visible = false
+
+[node name="Title" type="TextureRect" parent="Control MainMenu/CL MainMenu" index="2"]
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.07
+anchor_right = 0.85
+anchor_bottom = 0.35
+grow_horizontal = 2
+texture = ExtResource("4_0qjef")
+expand_mode = 5
+
+[node name="Button" parent="Control MainMenu/CL MainMenu" index="3"]
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+anchor_bottom = 0.65
+text = ""
+icon = ExtResource("3_y7uw1")
+flat = true
+icon_alignment = 1
 
 [node name="Star BG" parent="Control MainMenu/CL Planet Selection" index="0"]
 offset_top = 1.0842e-19
