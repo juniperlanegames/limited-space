@@ -8,13 +8,16 @@ extends Control
 
 func _ready():
 	cl_main_menu.visible = true
+	$"CL MainMenu/ParallaxBackground".visible = true
 	cl_planet_selection.visible = false
+	$"CL Planet Selection/ParallaxBackground".visible = false
 	cl_planet_gameplay.visible = false
 
 func _on_button_pressed() -> void: # play button
 	cl_main_menu.visible = false
+	$"CL MainMenu/ParallaxBackground".visible = false
 	cl_planet_selection.visible = true
-	
+	$"CL Planet Selection/ParallaxBackground".visible = true
 	GameManager.I.start_game()
 	
 	var timer = Timer.new()

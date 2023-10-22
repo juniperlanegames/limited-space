@@ -44,6 +44,7 @@ animations = [{
 [node name="Root" type="Node2D"]
 
 [node name="Control MainMenu" parent="." instance=ExtResource("2_a1lhn")]
+visible = false
 offset_left = 202.0
 offset_top = 100.0
 offset_right = 202.0
@@ -56,25 +57,16 @@ anchor_right = 0.55
 anchor_bottom = 0.65
 icon_alignment = 1
 
-[node name="CL Planet Selection" parent="Control MainMenu" index="1"]
-visible = true
-
-[node name="VLG Right" parent="Control MainMenu/CL Planet Selection/Top BGNew" index="3"]
-layout_mode = 0
-offset_left = 1126.0
-offset_top = 30.0
+[node name="VLG Right" parent="Control MainMenu/CL Planet Selection/Top BG" index="3"]
+layout_mode = 1
+offset_left = 1129.0
 offset_right = 1369.0
-offset_bottom = 96.0
 
 [node name="LED screen2" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="1"]
-layout_mode = 0
 offset_left = 57.0
 offset_top = 182.0
 offset_right = 325.0
 offset_bottom = 263.0
-
-[node name="CL Planet Gameplay" parent="Control MainMenu" index="2"]
-visible = false
 
 [node name="Starscape2" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="1"]
 anchors_preset = -1
@@ -123,12 +115,17 @@ stretch_mode = 0
 offset = Vector2(200, 100)
 
 [node name="CargoSpace" parent="." instance=ExtResource("1_ufjee")]
+visible = false
 
-[node name="Background" parent="CargoSpace" index="0"]
-visible = true
+[node name="CanvasLayer" parent="CargoSpace" index="1"]
+visible = false
 
 [node name="Control" parent="CargoSpace/CanvasLayer" index="0"]
+visible = false
 mouse_filter = 2
+
+[node name="Overlapping" parent="CargoSpace/CanvasLayer/Control" index="0"]
+visible = false
 
 [node name="Scripts" type="Node" parent="."]
 
@@ -137,6 +134,7 @@ script = ExtResource("3_qk8n7")
 spaceship = NodePath("Spaceship")
 
 [node name="Spaceship" type="Sprite2D" parent="Scripts/PlanetsSelectionManager"]
+visible = false
 z_index = 2
 scale = Vector2(0.5, 0.5)
 
