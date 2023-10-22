@@ -1,20 +1,33 @@
-[gd_scene load_steps=14 format=3 uid="uid://3ya8rkyrg8xa"]
+[gd_scene load_steps=28 format=3 uid="uid://3ya8rkyrg8xa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_trwe4"]
-[ext_resource type="Texture2D" uid="uid://dlfgg36wky2t0" path="res://Sprites/Starscapes/Space LLC Simple star background.png" id="3_17n1q"]
+[ext_resource type="Texture2D" uid="uid://do87b4ir11hqr" path="res://Sprites/Starscapes/starscape_02.png" id="2_e23rw"]
+[ext_resource type="Texture2D" uid="uid://5h1061n80tqb" path="res://Sprites/OtherAssets/play_button.png" id="3_cq1cd"]
 [ext_resource type="Texture2D" uid="uid://de60mfab3n84u" path="res://Sprites/Pieces/crred.png" id="3_nea87"]
-[ext_resource type="Texture2D" uid="uid://ba3mf435nadb4" path="res://Sprites/space LLC interior background.png" id="3_vp8w6"]
 [ext_resource type="Script" path="res://randomize_texture.gd" id="3_yr2co"]
 [ext_resource type="Texture2D" uid="uid://bj0mheenlag7o" path="res://Sprites/OtherAssets/Space LLC planetscape layer 01.png" id="4_0ua7s"]
 [ext_resource type="Texture2D" uid="uid://d1d6cgypq4fa1" path="res://Sprites/Pieces/crgreen.png" id="4_02yjy"]
+[ext_resource type="Texture2D" uid="uid://d25g4ohh34rxi" path="res://Sprites/OtherAssets/menu_title.png" id="4_jssap"]
 [ext_resource type="Texture2D" uid="uid://bcq5nsavfpm83" path="res://Sprites/Pieces/crblue.png" id="5_604wg"]
+[ext_resource type="Texture2D" uid="uid://g88vw42wdiil" path="res://Sprites/Starscapes/starscape_01.png" id="5_gfoa8"]
+[ext_resource type="Texture2D" uid="uid://d3n2ty2ewca44" path="res://Sprites/ShipConsole/galaxy_console_top.png" id="6_gs760"]
 [ext_resource type="Texture2D" uid="uid://q1117ki51f77" path="res://Sprites/Space LLC fuel cell.png" id="6_j2u4g"]
 [ext_resource type="Texture2D" uid="uid://dqw4832r2syey" path="res://Sprites/OtherAssets/Space LLC planetscape layer 02.png" id="6_qjy11"]
+[ext_resource type="Texture2D" uid="uid://dcm80h3dytb5k" path="res://Sprites/ShipConsole/galaxy_led_large.png" id="7_ahyqv"]
 [ext_resource type="Texture2D" uid="uid://dvxk5low50dcf" path="res://Sprites/Space LLC drone.png" id="7_dv1ke"]
 [ext_resource type="Texture2D" uid="uid://ck8s174d1mexi" path="res://Sprites/OtherAssets/Space LLC planetscape layer 03.png" id="7_xbsin"]
+[ext_resource type="Texture2D" uid="uid://djqtlnvla3jcs" path="res://Sprites/ShipConsole/galaxy_console_bottom.png" id="12_qhkgl"]
+[ext_resource type="Texture2D" uid="uid://crlh1inwvf732" path="res://Sprites/ShipConsole/Buttons/button_explore_planet_0000.png" id="13_bavar"]
+[ext_resource type="Texture2D" uid="uid://cebukj0482jg" path="res://Sprites/ShipConsole/galaxy_led_small.png" id="14_gskq3"]
+[ext_resource type="Texture2D" uid="uid://clxatdk1h2n73" path="res://Sprites/ShipConsole/small_grid_dark.png" id="16_83rt6"]
+[ext_resource type="Texture2D" uid="uid://ykx6h7ekmci8" path="res://Sprites/ShipConsole/planet_screen_dark_grid.png" id="21_5ohg1"]
+[ext_resource type="Texture2D" uid="uid://duyithrawqir6" path="res://Sprites/ShipConsole/planet_screen_drone_window.png" id="22_ma5yv"]
+[ext_resource type="Texture2D" uid="uid://ce1whphb4puhx" path="res://Sprites/ShipConsole/Buttons/button_prev_0000.png" id="23_jvr74"]
+[ext_resource type="Texture2D" uid="uid://86j3enky2yas" path="res://Sprites/ShipConsole/Buttons/button_next_0000.png" id="24_kl1ji"]
+[ext_resource type="Texture2D" uid="uid://cg4qnnej37xgg" path="res://Sprites/ShipConsole/Buttons/button_leave_planet_0000.png" id="25_qs7ew"]
+[ext_resource type="Texture2D" uid="uid://btxc1o0x2a45s" path="res://Sprites/ShipConsole/Buttons/button_sell_item_0000.png" id="26_mdm12"]
 
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u2fxi"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_nsxqf"]
 
 [node name="Control MainMenu" type="Control"]
 layout_mode = 3
@@ -30,37 +43,31 @@ script = ExtResource("1_trwe4")
 [node name="CL MainMenu" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="TextureRect" type="TextureRect" parent="CL MainMenu"]
+[node name="Starscape" type="TextureRect" parent="CL MainMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -60.0
-offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_17n1q")
+texture = ExtResource("2_e23rw")
 expand_mode = 5
 
-[node name="GameName Space LLC" type="Label" parent="CL MainMenu"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -157.0
-offset_top = 52.0
-offset_right = 152.0
-offset_bottom = 143.0
+[node name="Title" type="TextureRect" parent="CL MainMenu"]
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.07
+anchor_right = 0.85
+anchor_bottom = 0.35
 grow_horizontal = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 64
-text = "Space Escape"
-horizontal_alignment = 1
+texture = ExtResource("4_jssap")
+expand_mode = 5
 
 [node name="Button" type="Button" parent="CL MainMenu"]
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.558
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.558
 offset_left = -60.0
 offset_top = -19.0
 offset_right = 60.0
@@ -73,7 +80,8 @@ theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Play"
+icon = ExtResource("3_cq1cd")
+flat = true
 
 [node name="Made by" type="Label" parent="CL MainMenu"]
 anchors_preset = 7
@@ -96,74 +104,80 @@ vertical_alignment = 1
 
 [node name="CL Planet Selection" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="Star BG" type="TextureRect" parent="CL Planet Selection"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_17n1q")
+texture = ExtResource("5_gfoa8")
 expand_mode = 5
 
-[node name="Top BG" type="TextureRect" parent="CL Planet Selection"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -960.0
-offset_top = -120.0
-offset_right = 960.0
-offset_bottom = 80.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-texture = SubResource("PlaceholderTexture2D_u2fxi")
+[node name="Top BGNew" type="TextureRect" parent="CL Planet Selection"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_gs760")
 
-[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/Top BG"]
+[node name="LED screenL" type="TextureRect" parent="CL Planet Selection/Top BGNew"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -291.5
-offset_top = -66.0
-offset_right = 291.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 200
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.08
+anchor_right = 0.45
+anchor_bottom = 0.08
+offset_bottom = 92.16
+texture = ExtResource("7_ahyqv")
+expand_mode = 5
 
-[node name="VLG Left" type="VBoxContainer" parent="CL Planet Selection/Top BG/BoxContainer"]
+[node name="LED screenR" type="TextureRect" parent="CL Planet Selection/Top BGNew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.08
+anchor_right = 0.75
+anchor_bottom = 0.08
+offset_bottom = 92.16
+grow_horizontal = 0
+texture = ExtResource("7_ahyqv")
+expand_mode = 5
+
+[node name="VLG Left" type="VBoxContainer" parent="CL Planet Selection/Top BGNew"]
+layout_mode = 2
+offset_left = 557.0
+offset_top = 30.0
+offset_right = 800.0
+offset_bottom = 96.0
+
+[node name="Planet" type="BoxContainer" parent="CL Planet Selection/Top BGNew/VLG Left"]
 layout_mode = 2
 
-[node name="Planet" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left"]
-layout_mode = 2
-
-[node name="Planet Name" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Planet"]
+[node name="Planet Name" type="Label" parent="CL Planet Selection/Top BGNew/VLG Left/Planet"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Planet: "
 
-[node name="script planet name" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Planet"]
+[node name="script planet name" type="Label" parent="CL Planet Selection/Top BGNew/VLG Left/Planet"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Nebuloria"
 
-[node name="Needs" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left"]
+[node name="Needs" type="BoxContainer" parent="CL Planet Selection/Top BGNew/VLG Left"]
 layout_mode = 2
 
-[node name="Needs" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="Needs" type="Label" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Needs: "
 
-[node name="script Values" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="script Values" type="Label" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
@@ -171,200 +185,294 @@ theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Rock 1, Rock 2"
 
-[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("3_nea87")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("4_02yjy")
 expand_mode = 1
 
-[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("5_604wg")
 expand_mode = 1
 
-[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("6_j2u4g")
 expand_mode = 1
 
-[node name="material" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Left/Needs"]
+[node name="material" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Left/Needs"]
 modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("7_dv1ke")
 expand_mode = 1
 
-[node name="VLG Right" type="VBoxContainer" parent="CL Planet Selection/Top BG/BoxContainer"]
-layout_mode = 2
+[node name="VLG Right" type="VBoxContainer" parent="CL Planet Selection/Top BGNew"]
+offset_left = 1132.0
+offset_top = 32.0
+offset_right = 1375.0
+offset_bottom = 98.0
+alignment = 1
 
-[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right"]
+[node name="BoxContainer" type="BoxContainer" parent="CL Planet Selection/Top BGNew/VLG Right"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Fuel cost: "
 
-[node name="script planet fuel cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+[node name="script planet fuel cost" type="Label" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "650"
 
-[node name="slash" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+[node name="slash" type="Label" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = " of "
 
-[node name="script total_fuel" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer"]
+[node name="script total_fuel" type="Label" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "2000"
 
-[node name="BoxContainer2" type="BoxContainer" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right"]
+[node name="BoxContainer2" type="BoxContainer" parent="CL Planet Selection/Top BGNew/VLG Right"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="Fuel Cost" type="Label" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 20
 text = "Rich in:"
 
-[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="material3" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("3_nea87")
 expand_mode = 1
 
-[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="material2" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("4_02yjy")
 expand_mode = 1
 
-[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="material4" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("5_604wg")
 expand_mode = 1
 
-[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="material5" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("6_j2u4g")
 expand_mode = 1
 
-[node name="material" type="TextureRect" parent="CL Planet Selection/Top BG/BoxContainer/VLG Right/BoxContainer2"]
+[node name="material" type="TextureRect" parent="CL Planet Selection/Top BGNew/VLG Right/BoxContainer2"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("7_dv1ke")
 expand_mode = 1
 
 [node name="Bottom BG" type="TextureRect" parent="CL Planet Selection"]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -60.0
-offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("PlaceholderTexture2D_u2fxi")
-expand_mode = 1
-stretch_mode = 1
+texture = ExtResource("12_qhkgl")
+expand_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CL Planet Selection/Bottom BG"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -20.0
-offset_right = 273.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 100
+[node name="LED screen1" type="TextureRect" parent="CL Planet Selection/Bottom BG"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 69.0
+offset_right = 323.0
+offset_bottom = 150.0
+texture = ExtResource("14_gskq3")
 
-[node name="Time remaining" type="Label" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
+[node name="LED screen2" type="TextureRect" parent="CL Planet Selection/Bottom BG"]
+offset_left = 58.0
+offset_top = 184.0
+offset_right = 326.0
+offset_bottom = 265.0
+texture = ExtResource("14_gskq3")
+
+[node name="Money" type="Label" parent="CL Planet Selection/Bottom BG"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = " Time remaining: 30d"
-
-[node name="Cargo" type="Button" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
-layout_mode = 2
-text = "Show Cargo"
-
-[node name="Travel" type="Button" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
-layout_mode = 2
-text = "Travel to Planet"
-
-[node name="Money" type="Label" parent="CL Planet Selection/Bottom BG/HBoxContainer"]
-layout_mode = 2
+offset_left = 129.0
+offset_top = 94.0
+offset_right = 252.0
+offset_bottom = 125.0
 theme_override_font_sizes/font_size = 20
 text = "Money: 1000"
 
+[node name="Time remaining" type="Label" parent="CL Planet Selection/Bottom BG"]
+layout_mode = 2
+offset_left = 88.0
+offset_top = 209.0
+offset_right = 291.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20
+text = " Time remaining: 30d"
+
+[node name="Travel" type="Button" parent="CL Planet Selection/Bottom BG"]
+layout_mode = 2
+offset_left = 885.0
+offset_top = 203.0
+offset_right = 1104.0
+offset_bottom = 324.0
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("13_bavar")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="CL Planet Selection/Bottom BG"]
+layout_mode = 0
+offset_left = 1577.0
+offset_top = 42.0
+offset_right = 1897.0
+offset_bottom = 299.0
+texture = ExtResource("16_83rt6")
+
 [node name="CL Planet Gameplay" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
-[node name="BG disabled" type="TextureRect" parent="CL Planet Gameplay"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -925.0
-offset_top = 305.0
-offset_right = 1763.0
-offset_bottom = 1817.0
+[node name="Starscape" type="TextureRect" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.052
+anchor_right = 0.625
+anchor_bottom = 0.657
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_vp8w6")
-stretch_mode = 2
+texture = ExtResource("5_gfoa8")
+expand_mode = 5
 
 [node name="BG planet surface" type="TextureRect" parent="CL Planet Gameplay"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.064
+anchor_right = 0.581
+anchor_bottom = 0.733
 offset_right = 2688.0
 offset_bottom = 1512.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_0ua7s")
-stretch_mode = 2
+expand_mode = 5
 script = ExtResource("3_yr2co")
 textures = [ExtResource("4_0ua7s"), ExtResource("6_qjy11"), ExtResource("7_xbsin")]
 
-[node name="TextureRect" type="TextureRect" parent="CL Planet Gameplay"]
-offset_left = 308.0
-offset_top = 170.0
-offset_right = 4148.0
-offset_bottom = 2963.0
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_vp8w6")
+[node name="Ship Background" type="TextureRect" parent="CL Planet Gameplay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_5ohg1")
+expand_mode = 5
+
+[node name="Drone View Window" type="TextureRect" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = 0.674
+anchor_right = 0.454
+anchor_bottom = 0.674
+offset_right = 40.0
+offset_bottom = 308.971
+texture = ExtResource("22_ma5yv")
+expand_mode = 5
+
+[node name="Button Prev" type="TextureButton" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.692
+anchor_right = 0.122
+anchor_bottom = 0.692
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("23_jvr74")
+texture_pressed = SubResource("AnimatedTexture_nsxqf")
+
+[node name="Button Next" type="TextureButton" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.692
+anchor_right = 0.122
+anchor_bottom = 0.692
+offset_left = 864.56
+offset_top = -0.360046
+offset_right = 1056.23
+offset_bottom = 112.64
+texture_normal = ExtResource("24_kl1ji")
+
+[node name="Button Leave" type="TextureButton" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.692
+anchor_right = 0.122
+anchor_bottom = 0.692
+offset_left = 3.56
+offset_top = 148.64
+offset_right = 187.989
+offset_bottom = 261.64
+texture_normal = ExtResource("25_qs7ew")
+texture_pressed = SubResource("AnimatedTexture_nsxqf")
+
+[node name="Button Sell" type="TextureButton" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.692
+anchor_right = 0.122
+anchor_bottom = 0.692
+offset_left = 863.56
+offset_top = 149.64
+offset_right = 1055.23
+offset_bottom = 262.64
+texture_normal = ExtResource("26_mdm12")
+
+[node name="LED screen1" type="TextureRect" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_right = 0.087
+anchor_bottom = 0.081
+offset_left = 1249.0
+offset_top = 71.0
+offset_right = 1649.0
+offset_bottom = 167.0
+texture = ExtResource("7_ahyqv")
+
+[node name="LED screen2" type="TextureRect" parent="CL Planet Gameplay"]
+anchors_preset = -1
+anchor_right = 0.087
+anchor_bottom = 0.058
+offset_left = 1258.0
+offset_top = 838.0
+offset_right = 1658.0
+offset_bottom = 934.0
+texture = ExtResource("7_ahyqv")
 
 [connection signal="pressed" from="CL MainMenu/Button" to="." method="_on_button_pressed"]

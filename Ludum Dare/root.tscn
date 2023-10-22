@@ -1,19 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://bx7wn1ll33tm0"]
+[gd_scene load_steps=16 format=3 uid="uid://bx7wn1ll33tm0"]
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
 [ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
 [ext_resource type="Texture2D" uid="uid://g88vw42wdiil" path="res://Sprites/Starscapes/starscape_01.png" id="2_apesr"]
-[ext_resource type="Texture2D" uid="uid://do87b4ir11hqr" path="res://Sprites/Starscapes/starscape_02.png" id="2_tf5yb"]
-[ext_resource type="Texture2D" uid="uid://d3n2ty2ewca44" path="res://Sprites/ShipConsole/galaxy_console_top.png" id="3_om8jg"]
 [ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
-[ext_resource type="Texture2D" uid="uid://5h1061n80tqb" path="res://Sprites/OtherAssets/play_button.png" id="3_y7uw1"]
-[ext_resource type="Texture2D" uid="uid://d25g4ohh34rxi" path="res://Sprites/OtherAssets/menu_title.png" id="4_0qjef"]
-[ext_resource type="Texture2D" uid="uid://dcm80h3dytb5k" path="res://Sprites/ShipConsole/galaxy_led_large.png" id="4_21k1o"]
 [ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
-[ext_resource type="Texture2D" uid="uid://djqtlnvla3jcs" path="res://Sprites/ShipConsole/galaxy_console_bottom.png" id="4_w0ckh"]
 [ext_resource type="AudioStream" uid="uid://dp5cq546x0i85" path="res://Audio/SpaceEscape_Music_SolarSplash.wav" id="5_p2p5q"]
-[ext_resource type="Texture2D" uid="uid://ds47jqkw3ry50" path="res://Sprites/ShipConsole/galaxy_cargo_display.png" id="6_bq84h"]
-[ext_resource type="Texture2D" uid="uid://cebukj0482jg" path="res://Sprites/ShipConsole/galaxy_led_small.png" id="7_rre78"]
 [ext_resource type="Texture2D" uid="uid://ykx6h7ekmci8" path="res://Sprites/ShipConsole/planet_screen_dark_grid.png" id="11_o8fjs"]
 [ext_resource type="Texture2D" uid="uid://duyithrawqir6" path="res://Sprites/ShipConsole/planet_screen_drone_window.png" id="12_hn0k6"]
 [ext_resource type="Texture2D" uid="uid://ce1whphb4puhx" path="res://Sprites/ShipConsole/Buttons/button_prev_0000.png" id="13_in67p"]
@@ -58,152 +50,33 @@ offset_right = 202.0
 offset_bottom = 100.0
 size_flags_horizontal = 0
 
-[node name="TextureRect" parent="Control MainMenu/CL MainMenu" index="0"]
-offset_top = 0.0
-offset_bottom = 0.0
-texture = ExtResource("2_tf5yb")
-
-[node name="GameName Space LLC" parent="Control MainMenu/CL MainMenu" index="1"]
-visible = false
-
-[node name="Title" type="TextureRect" parent="Control MainMenu/CL MainMenu" index="2"]
-anchors_preset = -1
-anchor_left = 0.15
-anchor_top = 0.07
-anchor_right = 0.85
-anchor_bottom = 0.35
-grow_horizontal = 2
-texture = ExtResource("4_0qjef")
-expand_mode = 5
-
-[node name="Button" parent="Control MainMenu/CL MainMenu" index="3"]
-anchors_preset = -1
+[node name="Button" parent="Control MainMenu/CL MainMenu" index="2"]
 anchor_left = 0.45
 anchor_right = 0.55
 anchor_bottom = 0.65
-text = ""
-icon = ExtResource("3_y7uw1")
-flat = true
 icon_alignment = 1
 
-[node name="Star BG" parent="Control MainMenu/CL Planet Selection" index="0"]
-offset_top = 1.0842e-19
-offset_bottom = 120.0
-scale = Vector2(1.00027, 0.898784)
-texture = ExtResource("2_apesr")
+[node name="CL Planet Selection" parent="Control MainMenu" index="1"]
+visible = true
 
-[node name="Top BG" parent="Control MainMenu/CL Planet Selection" index="1"]
-anchors_preset = 10
-anchor_left = 0.0
-anchor_right = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 219.0
-texture = ExtResource("3_om8jg")
-expand_mode = 5
+[node name="VLG Right" parent="Control MainMenu/CL Planet Selection/Top BGNew" index="3"]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = 30.0
+offset_right = 1369.0
+offset_bottom = 96.0
 
-[node name="LED screen" type="TextureRect" parent="Control MainMenu/CL Planet Selection/Top BG" index="0"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.08
-anchor_right = 0.45
-anchor_bottom = 0.08
-texture = ExtResource("4_21k1o")
-expand_mode = 5
+[node name="LED screen2" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="1"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 182.0
+offset_right = 325.0
+offset_bottom = 263.0
 
-[node name="LED screen2" type="TextureRect" parent="Control MainMenu/CL Planet Selection/Top BG" index="1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.55
-anchor_top = 0.08
-anchor_right = 0.75
-anchor_bottom = 0.08
-grow_horizontal = 0
-texture = ExtResource("4_21k1o")
-expand_mode = 5
+[node name="CL Planet Gameplay" parent="Control MainMenu" index="2"]
+visible = false
 
-[node name="BoxContainer" parent="Control MainMenu/CL Planet Selection/Top BG" index="2"]
-anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.15
-anchor_right = 0.75
-anchor_bottom = 0.15
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-grow_vertical = 1
-alignment = 1
-
-[node name="VLG Right" parent="Control MainMenu/CL Planet Selection/Top BG/BoxContainer" index="1"]
-alignment = 1
-
-[node name="Bottom BG" parent="Control MainMenu/CL Planet Selection" index="2"]
-anchors_preset = 12
-anchor_left = 0.0
-anchor_right = 1.0
-offset_left = 0.0
-offset_top = -310.0
-offset_right = 0.0
-texture = ExtResource("4_w0ckh")
-expand_mode = 5
-stretch_mode = 0
-
-[node name="Cargo Grid" type="TextureRect" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="0"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.83
-anchor_top = 0.401
-anchor_right = 0.983
-anchor_bottom = 0.93
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("6_bq84h")
-expand_mode = 5
-
-[node name="LED screen" type="TextureRect" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.22
-anchor_right = 0.17
-anchor_bottom = 0.22
-offset_bottom = 87.0448
-texture = ExtResource("7_rre78")
-expand_mode = 5
-
-[node name="LED screen2" type="TextureRect" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.6
-anchor_right = 0.17
-anchor_bottom = 0.6
-offset_bottom = 87.0448
-texture = ExtResource("7_rre78")
-expand_mode = 5
-
-[node name="HBoxContainer" parent="Control MainMenu/CL Planet Selection/Bottom BG" index="3"]
-anchors_preset = -1
-anchor_left = 0.029
-anchor_top = 0.285
-anchor_right = 0.552
-anchor_bottom = 0.285
-offset_left = -1.68
-offset_top = -0.339966
-offset_right = -1.68005
-offset_bottom = -0.339966
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="BG disabled" parent="Control MainMenu/CL Planet Gameplay" index="0"]
-offset_left = 80.0
-offset_top = 72.0
-offset_right = 2768.0
-offset_bottom = 1584.0
-
-[node name="Starscape" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="1"]
+[node name="Starscape2" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="1"]
 anchors_preset = -1
 anchor_left = 0.035
 anchor_top = 0.052
@@ -214,19 +87,7 @@ grow_vertical = 2
 texture = ExtResource("2_apesr")
 expand_mode = 5
 
-[node name="BG planet surface" parent="Control MainMenu/CL Planet Gameplay" index="2"]
-anchors_preset = -1
-anchor_left = 0.041
-anchor_top = 0.064
-anchor_right = 0.581
-anchor_bottom = 0.733
-expand_mode = 5
-stretch_mode = 0
-
-[node name="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="3"]
-visible = false
-
-[node name="Ship Background" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="4"]
+[node name="Ship Background2" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="4"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -235,7 +96,7 @@ grow_vertical = 2
 texture = ExtResource("11_o8fjs")
 expand_mode = 5
 
-[node name="Drone View Window" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="5"]
+[node name="Drone View Window2" type="TextureRect" parent="Control MainMenu/CL Planet Gameplay" index="5"]
 anchors_preset = -1
 anchor_left = 0.192
 anchor_top = 0.674
@@ -246,7 +107,7 @@ offset_bottom = 308.971
 texture = ExtResource("12_hn0k6")
 expand_mode = 5
 
-[node name="Button Prev" type="TextureButton" parent="Control MainMenu/CL Planet Gameplay" index="6"]
+[node name="Button Prev2" type="TextureButton" parent="Control MainMenu/CL Planet Gameplay" index="6"]
 anchors_preset = -1
 anchor_left = 0.057
 anchor_top = 0.692
