@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://1353n3q67vuq"]
+
+[ext_resource type="Texture2D" uid="uid://f8tptsvbdbon" path="res://Sprites/OtherAssets/spaceship_small_resting_0000.png" id="1_bvlox"]
+[ext_resource type="Texture2D" uid="uid://d2byclk7awray" path="res://Sprites/OtherAssets/spaceship_small_moving_0000.png" id="2_482mf"]
+[ext_resource type="Texture2D" uid="uid://ct0ralm8scrf5" path="res://Sprites/OtherAssets/spaceship_small_moving_0001.png" id="3_fxn2g"]
+[ext_resource type="Texture2D" uid="uid://cxd8tkolcew0t" path="res://Sprites/OtherAssets/spaceship_small_moving_0002.png" id="4_5f25r"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bvlox")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_482mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fxn2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5f25r")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 15.0
+}]

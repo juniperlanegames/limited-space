@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bx7wn1ll33tm0"]
+[gd_scene load_steps=12 format=3 uid="uid://bx7wn1ll33tm0"]
 
 [ext_resource type="PackedScene" uid="uid://vjesbrskhia" path="res://cargo_space.tscn" id="1_ufjee"]
 [ext_resource type="PackedScene" uid="uid://3ya8rkyrg8xa" path="res://UI.tscn" id="2_a1lhn"]
@@ -6,40 +6,12 @@
 [ext_resource type="Script" path="res://planets_selection_manager.gd" id="3_qk8n7"]
 [ext_resource type="Script" path="res://game_manager.gd" id="4_qt626"]
 [ext_resource type="AudioStream" uid="uid://dp5cq546x0i85" path="res://Audio/SpaceEscape_Music_SolarSplash.wav" id="5_p2p5q"]
+[ext_resource type="SpriteFrames" uid="uid://1353n3q67vuq" path="res://Sprites/OtherAssets/spaceship_anims.tres" id="8_v5kst"]
 [ext_resource type="Texture2D" uid="uid://ykx6h7ekmci8" path="res://Sprites/ShipConsole/planet_screen_dark_grid.png" id="11_o8fjs"]
 [ext_resource type="Texture2D" uid="uid://duyithrawqir6" path="res://Sprites/ShipConsole/planet_screen_drone_window.png" id="12_hn0k6"]
 [ext_resource type="Texture2D" uid="uid://ce1whphb4puhx" path="res://Sprites/ShipConsole/Buttons/button_prev_0000.png" id="13_in67p"]
-[ext_resource type="Texture2D" uid="uid://d2byclk7awray" path="res://Sprites/OtherAssets/spaceship_small_moving_0000.png" id="16_i0gbl"]
-[ext_resource type="Texture2D" uid="uid://ct0ralm8scrf5" path="res://Sprites/OtherAssets/spaceship_small_moving_0001.png" id="17_7ya0p"]
-[ext_resource type="Texture2D" uid="uid://cxd8tkolcew0t" path="res://Sprites/OtherAssets/spaceship_small_moving_0002.png" id="18_hhl3n"]
-[ext_resource type="Texture2D" uid="uid://f8tptsvbdbon" path="res://Sprites/OtherAssets/spaceship_small_resting_0000.png" id="19_emqis"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ykmrq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i4b7h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_i0gbl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_7ya0p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_hhl3n")
-}],
-"loop": true,
-"name": &"moving",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_emqis")
-}],
-"loop": true,
-"name": &"resting",
-"speed": 5.0
-}]
 
 [node name="Root" type="Node2D"]
 
@@ -50,12 +22,6 @@ offset_top = 100.0
 offset_right = 202.0
 offset_bottom = 100.0
 size_flags_horizontal = 0
-
-[node name="Button" parent="Control MainMenu/CL MainMenu" index="2"]
-anchor_left = 0.45
-anchor_right = 0.55
-anchor_bottom = 0.65
-icon_alignment = 1
 
 [node name="VLG Right" parent="Control MainMenu/CL Planet Selection/Top BG" index="3"]
 layout_mode = 1
@@ -131,19 +97,14 @@ visible = false
 
 [node name="PlanetsSelectionManager" type="Node" parent="Scripts" node_paths=PackedStringArray("spaceship")]
 script = ExtResource("3_qk8n7")
-spaceship = NodePath("Spaceship")
+spaceship = NodePath("")
 
-[node name="Spaceship" type="Sprite2D" parent="Scripts/PlanetsSelectionManager"]
+[node name="Spaceship" type="AnimatedSprite2D" parent="Scripts/PlanetsSelectionManager"]
 visible = false
 z_index = 2
-scale = Vector2(0.5, 0.5)
-
-[node name="Spaceship Animated" type="AnimatedSprite2D" parent="Scripts/PlanetsSelectionManager/Spaceship"]
-position = Vector2(0, 40)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_i4b7h")
+scale = Vector2(0.25, 0.25)
+sprite_frames = ExtResource("8_v5kst")
 animation = &"moving"
-frame_progress = 0.999691
 
 [node name="GameManager" type="Node" parent="Scripts"]
 script = ExtResource("4_qt626")

@@ -13,7 +13,7 @@ config_version=5
 config/name="limited_space"
 run/main_scene="res://root.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://Sprites/Planets/Space LLC PLANET 03.png"
+config/icon="res://Sprites/OtherAssets/blast_off.png"
 
 [display]
 

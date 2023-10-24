@@ -32,13 +32,15 @@ func _spawn_and_move_spaceship_to_random_location():
 			spawned_ship = true
 			ship_position = pos
 			world_pos = _get_grid_pos(pos.x, pos.y)
-			spaceship.visible = true
+			$Spaceship.visible = true
 	
 	# move spaceship
-	spaceship.position = Vector2(-1000, 0)
-	spaceship.rotate((spaceship.position.angle_to_point(world_pos)) + deg_to_rad(90))
+	$Spaceship.play("moving")
+	$Spaceship.position = Vector2(-1000, 0)
+	$Spaceship.rotate(($Spaceship.position.angle_to_point(world_pos)) + deg_to_rad(90))
 	var tw = create_tween()
-	tw.tween_property(spaceship, "position", world_pos,  5)
+	tw.tween_property($Spaceship, "position", world_pos,  5)
+	
 
 func _get_grid_pos(x, y):
 	return Vector2(grid_y_offset_px + x * planet_distance_px, grid_y_offset_px + y * planet_distance_px)

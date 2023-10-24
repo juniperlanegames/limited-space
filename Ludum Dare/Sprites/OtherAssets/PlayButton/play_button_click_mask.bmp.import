@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dm23o46w1ji23"
+path="res://.godot/imported/play_button_click_mask.bmp-751e3f4f297d42ba6d54bc7d161b2083.res"
+
+[deps]
+
+source_file="res://Sprites/OtherAssets/PlayButton/play_button_click_mask.bmp"
+dest_files=["res://.godot/imported/play_button_click_mask.bmp-751e3f4f297d42ba6d54bc7d161b2083.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

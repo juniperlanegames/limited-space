@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://3ya8rkyrg8xa"]
+[gd_scene load_steps=47 format=3 uid="uid://3ya8rkyrg8xa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_trwe4"]
 [ext_resource type="Texture2D" uid="uid://do87b4ir11hqr" path="res://Sprites/Starscapes/starscape_02.png" id="2_e23rw"]
-[ext_resource type="Texture2D" uid="uid://5h1061n80tqb" path="res://Sprites/OtherAssets/play_button.png" id="3_cq1cd"]
 [ext_resource type="Texture2D" uid="uid://de60mfab3n84u" path="res://Sprites/Pieces/crred.png" id="3_nea87"]
 [ext_resource type="Script" path="res://randomize_texture.gd" id="3_yr2co"]
 [ext_resource type="Texture2D" uid="uid://bj0mheenlag7o" path="res://Sprites/OtherAssets/Space LLC planetscape layer 01.png" id="4_0ua7s"]
@@ -16,12 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://cp0iwukuagsdu" path="res://Sprites/ShipConsole/display_screen_long.png" id="7_8ptri"]
 [ext_resource type="Texture2D" uid="uid://dvxk5low50dcf" path="res://Sprites/Space LLC drone.png" id="7_dv1ke"]
 [ext_resource type="Texture2D" uid="uid://ck8s174d1mexi" path="res://Sprites/OtherAssets/Space LLC planetscape layer 03.png" id="7_xbsin"]
+[ext_resource type="SpriteFrames" uid="uid://bgxeq23qt1o0c" path="res://Sprites/OtherAssets/PlayButton/play_button_anims.tres" id="8_v6wve"]
+[ext_resource type="Script" path="res://PlayButton.gd" id="9_nv8mq"]
 [ext_resource type="Texture2D" uid="uid://djqtlnvla3jcs" path="res://Sprites/ShipConsole/galaxy_console_bottom.png" id="12_qhkgl"]
 [ext_resource type="Texture2D" uid="uid://crlh1inwvf732" path="res://Sprites/ShipConsole/Buttons/button_explore_planet_0000.png" id="13_bavar"]
 [ext_resource type="Texture2D" uid="uid://cdffoeyik56ef" path="res://Sprites/ShipConsole/display_screen_medium.png" id="14_815d3"]
 [ext_resource type="Texture2D" uid="uid://clxatdk1h2n73" path="res://Sprites/ShipConsole/small_grid_dark.png" id="16_83rt6"]
 [ext_resource type="Script" path="res://parallax_background.gd" id="17_5dhic"]
+[ext_resource type="BitMap" uid="uid://dm23o46w1ji23" path="res://Sprites/OtherAssets/PlayButton/play_button_click_mask.bmp" id="18_7cw4b"]
 [ext_resource type="Texture2D" uid="uid://c1mkunqwxpek7" path="res://Sprites/Starscapes/star_parallax_01.png" id="18_aynj1"]
+[ext_resource type="Texture2D" uid="uid://bcn34dng0je8" path="res://Sprites/ShipConsole/Buttons/button_explore_planet_0008.png" id="18_mhlu0"]
+[ext_resource type="Texture2D" uid="uid://bb1quhfcmlk0w" path="res://Sprites/ShipConsole/Buttons/button_explore_planet_0001.png" id="19_7quar"]
+[ext_resource type="Texture2D" uid="uid://dvlanrrof4jh5" path="res://Sprites/ShipConsole/Buttons/button_explore_planet_0003.png" id="20_w1f55"]
 [ext_resource type="Texture2D" uid="uid://ykx6h7ekmci8" path="res://Sprites/ShipConsole/planet_screen_dark_grid.png" id="21_5ohg1"]
 [ext_resource type="Texture2D" uid="uid://duyithrawqir6" path="res://Sprites/ShipConsole/planet_screen_drone_window.png" id="22_ma5yv"]
 [ext_resource type="Texture2D" uid="uid://ce1whphb4puhx" path="res://Sprites/ShipConsole/Buttons/button_prev_0000.png" id="23_jvr74"]
@@ -29,8 +34,18 @@
 [ext_resource type="Texture2D" uid="uid://cg4qnnej37xgg" path="res://Sprites/ShipConsole/Buttons/button_leave_planet_0000.png" id="25_qs7ew"]
 [ext_resource type="Texture2D" uid="uid://btxc1o0x2a45s" path="res://Sprites/ShipConsole/Buttons/button_sell_item_0000.png" id="26_mdm12"]
 [ext_resource type="Texture2D" uid="uid://bm04doiaktslk" path="res://Sprites/ShipConsole/display_screen_short.png" id="27_gwte1"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_nsxqf"]
+[ext_resource type="Texture2D" uid="uid://clkdidw10updx" path="res://Sprites/ShipConsole/Buttons/button_prev_0008.png" id="29_md00m"]
+[ext_resource type="Texture2D" uid="uid://bihdv6xa4ckpw" path="res://Sprites/ShipConsole/Buttons/button_prev_0001.png" id="30_rggqn"]
+[ext_resource type="Texture2D" uid="uid://ccgxptjb2dujb" path="res://Sprites/ShipConsole/Buttons/button_prev_0003.png" id="31_r8pjy"]
+[ext_resource type="Texture2D" uid="uid://d2xpe4c37p2un" path="res://Sprites/ShipConsole/Buttons/button_next_0008.png" id="33_rh8xr"]
+[ext_resource type="Texture2D" uid="uid://bdl65ip4fl4uq" path="res://Sprites/ShipConsole/Buttons/button_next_0001.png" id="34_skj27"]
+[ext_resource type="Texture2D" uid="uid://dq0pjpymhawkb" path="res://Sprites/ShipConsole/Buttons/button_next_0003.png" id="35_qbko2"]
+[ext_resource type="Texture2D" uid="uid://j81mhmcvkslh" path="res://Sprites/ShipConsole/Buttons/button_leave_planet_0008.png" id="37_ysmkt"]
+[ext_resource type="Texture2D" uid="uid://cjrsrh1px7rx4" path="res://Sprites/ShipConsole/Buttons/button_leave_planet_0001.png" id="38_t3sa8"]
+[ext_resource type="Texture2D" uid="uid://b3kmwo435ymt6" path="res://Sprites/ShipConsole/Buttons/button_leave_planet_0003.png" id="39_202nf"]
+[ext_resource type="Texture2D" uid="uid://dqkmp6ayxcean" path="res://Sprites/ShipConsole/Buttons/button_sell_item_0008.png" id="41_26t18"]
+[ext_resource type="Texture2D" uid="uid://o36y5xj6leb7" path="res://Sprites/ShipConsole/Buttons/button_sell_item_0001.png" id="42_ah4tp"]
+[ext_resource type="Texture2D" uid="uid://d4db760mutf4a" path="res://Sprites/ShipConsole/Buttons/button_sell_item_0003.png" id="43_r8mc8"]
 
 [node name="Control MainMenu" type="Control"]
 layout_mode = 3
@@ -44,11 +59,9 @@ grow_vertical = 2
 script = ExtResource("1_trwe4")
 
 [node name="CL MainMenu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CL MainMenu"]
 layer = -2
-visible = false
 scroll_offset = Vector2(1000, 200)
 scroll_ignore_camera_zoom = true
 script = ExtResource("17_5dhic")
@@ -94,26 +107,26 @@ grow_horizontal = 2
 texture = ExtResource("4_jssap")
 expand_mode = 5
 
-[node name="Button" type="Button" parent="CL MainMenu"]
+[node name="PlayButton" type="TextureButton" parent="CL MainMenu"]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.558
+anchor_top = 0.57
 anchor_right = 0.5
-anchor_bottom = 0.558
-offset_left = -60.0
-offset_top = -19.0
-offset_right = 60.0
-offset_bottom = 34.0
+anchor_bottom = 0.57
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
-icon = ExtResource("3_cq1cd")
-flat = true
+texture_click_mask = ExtResource("18_7cw4b")
+script = ExtResource("9_nv8mq")
+
+[node name="PlayButtonTimer" type="Timer" parent="CL MainMenu/PlayButton"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CL MainMenu/PlayButton"]
+sprite_frames = ExtResource("8_v6wve")
+animation = &"normal"
+frame_progress = 0.668765
+centered = false
 
 [node name="Made by" type="Label" parent="CL MainMenu"]
 anchors_preset = 7
@@ -136,9 +149,11 @@ vertical_alignment = 1
 
 [node name="CL Planet Selection" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CL Planet Selection"]
 layer = -2
+visible = false
 scroll_offset = Vector2(1000, 200)
 scroll_ignore_camera_zoom = true
 script = ExtResource("17_5dhic")
@@ -401,15 +416,19 @@ offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 text = " Time remaining: 30d"
 
-[node name="Travel" type="Button" parent="CL Planet Selection/Bottom BG"]
+[node name="Travel" type="TextureButton" parent="CL Planet Selection/Bottom BG"]
 layout_mode = 2
 offset_left = 885.0
 offset_top = 203.0
 offset_right = 1104.0
 offset_bottom = 324.0
 scale = Vector2(0.75, 0.75)
-icon = ExtResource("13_bavar")
-flat = true
+action_mode = 0
+texture_normal = ExtResource("13_bavar")
+texture_pressed = ExtResource("18_mhlu0")
+texture_hover = ExtResource("19_7quar")
+texture_disabled = ExtResource("20_w1f55")
+texture_focused = ExtResource("19_7quar")
 
 [node name="CargoGridHalfsize" type="TextureRect" parent="CL Planet Selection/Bottom BG"]
 layout_mode = 0
@@ -489,7 +508,10 @@ anchor_bottom = 0.692
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("23_jvr74")
-texture_pressed = SubResource("AnimatedTexture_nsxqf")
+texture_pressed = ExtResource("29_md00m")
+texture_hover = ExtResource("30_rggqn")
+texture_disabled = ExtResource("31_r8pjy")
+texture_focused = ExtResource("30_rggqn")
 
 [node name="Button Next" type="TextureButton" parent="CL Planet Gameplay"]
 anchors_preset = -1
@@ -502,6 +524,10 @@ offset_top = -0.360046
 offset_right = 1056.23
 offset_bottom = 112.64
 texture_normal = ExtResource("24_kl1ji")
+texture_pressed = ExtResource("33_rh8xr")
+texture_hover = ExtResource("34_skj27")
+texture_disabled = ExtResource("35_qbko2")
+texture_focused = ExtResource("34_skj27")
 
 [node name="Button Leave" type="TextureButton" parent="CL Planet Gameplay"]
 anchors_preset = -1
@@ -514,7 +540,10 @@ offset_top = 148.64
 offset_right = 187.989
 offset_bottom = 261.64
 texture_normal = ExtResource("25_qs7ew")
-texture_pressed = SubResource("AnimatedTexture_nsxqf")
+texture_pressed = ExtResource("37_ysmkt")
+texture_hover = ExtResource("38_t3sa8")
+texture_disabled = ExtResource("39_202nf")
+texture_focused = ExtResource("38_t3sa8")
 
 [node name="Button Sell" type="TextureButton" parent="CL Planet Gameplay"]
 anchors_preset = -1
@@ -527,6 +556,10 @@ offset_top = 149.64
 offset_right = 1055.23
 offset_bottom = 262.64
 texture_normal = ExtResource("26_mdm12")
+texture_pressed = ExtResource("41_26t18")
+texture_hover = ExtResource("42_ah4tp")
+texture_disabled = ExtResource("43_r8mc8")
+texture_focused = ExtResource("42_ah4tp")
 
 [node name="DisplayScreenMoney" type="TextureRect" parent="CL Planet Gameplay"]
 anchors_preset = -1
@@ -548,4 +581,8 @@ offset_right = 1649.96
 offset_bottom = 956.36
 texture = ExtResource("27_gwte1")
 
-[connection signal="pressed" from="CL MainMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CL MainMenu/PlayButton" to="CL MainMenu/PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CL MainMenu/PlayButton" to="CL MainMenu/PlayButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="CL MainMenu/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CL MainMenu/PlayButton" to="CL MainMenu/PlayButton" method="_on_pressed"]
+[connection signal="timeout" from="CL MainMenu/PlayButton/PlayButtonTimer" to="." method="_on_play_button_timer_timeout"]

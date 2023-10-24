@@ -14,6 +14,9 @@ func _ready():
 	cl_planet_gameplay.visible = false
 
 func _on_button_pressed() -> void: # play button
+	$"CL MainMenu/PlayButton/PlayButtonTimer".start()
+
+func _on_play_button_timer_timeout():
 	cl_main_menu.visible = false
 	$"CL MainMenu/ParallaxBackground".visible = false
 	cl_planet_selection.visible = true
@@ -34,3 +37,7 @@ func go_to_planet_ui():
 func _on_timer_timeout():
 	go_to_planet_ui()
 	GameManager.I.start_planet_gameplay()
+
+
+
+
